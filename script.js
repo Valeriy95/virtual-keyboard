@@ -123,3 +123,22 @@ document.addEventListener('keydown', (e) => {
     return;
   }
 });
+
+document.addEventListener('keyup', (e) => {
+  if (keyCodes.includes(e.code) === true) {
+    const p = document.querySelector(`[data-key="${e.code}"]`);
+    function animationEnd() {
+      p.classList.remove('animation');
+    }
+    if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+      animationEnd();
+      shiftKeyUp();
+    } else {
+      setTimeout(() => {
+        animationEnd();
+      }, 300);
+    }
+  } else {
+    return;
+  }
+});

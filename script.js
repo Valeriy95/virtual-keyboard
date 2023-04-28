@@ -1,4 +1,5 @@
 import { counter, lowerUpperCase } from './lowerUpperCase';
+import { shiftKeyUp, shiftKeyDown } from './shiftKey';
 import {
   alpabetEn, alpabetEnLower, alpabetRu, alpabetRuLower, changelanguageKey,
 } from './altKey';

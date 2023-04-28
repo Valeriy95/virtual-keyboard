@@ -1,6 +1,6 @@
 import {
   alpabetEn, alpabetEnLower, alpabetRu, alpabetRuLower,
-} from './altKey';
+} from './altKey.js';
 
 let counter = 0;
 

@@ -251,3 +251,13 @@ margin: 0;
       border-radius: 0px;
    }
 }
+
+.text {
+   width: 1040px;
+   height: 300px;
+   text-align: center;
+   font-size: 30px;
+   margin-top: 40px;
+   margin-left: auto;
+   margin-right: auto;
+}

@@ -1,8 +1,8 @@
-import { lowerUpperCase } from './lowerUpperCase';
-import { shiftKeyUp, shiftKeyDown } from './shiftKey';
+import { lowerUpperCase } from './lowerUpperCase.js';
+import { shiftKeyUp, shiftKeyDown } from './shiftKey.js';
 import {
   alpabetEn, alpabetRu, changelanguageKey,
-} from './altKey';
+} from './altKey.js';
 
 const keyCodes = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace', 'Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Backslash', 'Delete', 'CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter', 'ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'ControlRight'];
 
@@ -15,6 +15,11 @@ body.append(textarea);
 const section = document.createElement('section');
 section.className = 'container';
 body.append(section);
+
+const text = document.createElement('p');
+text.className = 'text';
+text.innerHTML = 'Клавиатура создана в операционной системе Windows <br> Для переключения языка комбинация: левыe ctrl + alt';
+body.append(text);
 
 function createKey(lang = 'en') {
   if (lang === 'en') {

@@ -15,5 +15,7 @@ module.exports = {
     'import/no-mutable-exports': 'off',
     'no-useless-return': 'off',
     'no-inner-declarations': 'off',
+    'func-names': 'off',
+    'no-restricted-syntax': 'off',
   },
 };

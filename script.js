@@ -142,3 +142,88 @@ document.addEventListener('keyup', (e) => {
     return;
   }
 });
+
+const key = document.querySelectorAll('div[data-key]');
+for (const k of key) {
+  k.onmousedown = function () {
+    if (keyCodes.includes(k.dataset.key) === true) {
+      const display = document.querySelector('.textarea');
+      const p = document.querySelector(`[data-key="${k.dataset.key}"]`);
+
+      if (k.dataset.key === 'Tab') {
+        const positionCursor = display.selectionEnd + 3;
+        const arrText = display.value.split('');
+        arrText.splice(display.selectionEnd, 0, '   ');
+        display.value = arrText.join('');
+        display.selectionStart = positionCursor;
+        display.selectionEnd = positionCursor;
+      } else if (k.dataset.key === 'Enter') {
+        const part1 = display.value.split('').splice(0, display.selectionStart).join('');
+        const part2 = display.value.split('').splice(display.selectionEnd).join('');
+        display.value = `${part1} \n${part2}`;
+        display.selectionStart = part1.length + +2;
+        display.selectionEnd = part1.length + +2;
+      } else if (k.dataset.key === 'Delete') {
+        const part1 = display.value.split('').splice(0, display.selectionEnd).join('');
+        const part2 = display.value.split('').splice(display.selectionEnd + 1).join('');
+        display.value = part1 + part2;
+        display.selectionStart = part1.length;
+        display.selectionEnd = part1.length;
+        // display.focus();
+      } else if (k.dataset.key === 'CapsLock') {
+        lowerUpperCase();
+      } else if (k.dataset.key === 'Space') {
+        const positionCursor = display.selectionEnd + 1;
+        const arrText = display.value.split('');
+        arrText.splice(display.selectionEnd, 0, ' ');
+        display.value = arrText.join('');
+        display.selectionStart = positionCursor;
+        display.selectionEnd = positionCursor;
+      } else if (k.dataset.key === 'ShiftLeft' || k.dataset.key === 'ShiftRight') {
+        if (k.repeat) {
+          k.preventDefault();
+        } else {
+          shiftKeyDown();
+        }
+      } else if (k.dataset.key === 'ControlLeft' || k.dataset.key === 'ControlRight') {
+        display.value += '';
+      } else if (k.dataset.key === 'MetaLeft') {
+        display.value += '';
+      } else if (k.dataset.key === 'AltLeft' || k.dataset.key === 'AltRight') {
+        display.value += '';
+      } else if (k.dataset.key === 'Backspace') {
+        let part1 = display.value.split('').splice(0, display.selectionEnd - 1).join('');
+        if (part1[part1.length - 1] === ' ') {
+          part1 = part1.split('').splice(0, part1.length - 1).join('');
+        }
+        const part2 = display.value.split('').splice(display.selectionEnd).join('');
+        display.value = part1 + part2;
+        display.selectionStart = part1.length;
+        display.selectionEnd = part1.length;
+      } else {
+        const positionCursor = display.selectionEnd + 1;
+        const arrText = display.value.split('');
+        arrText.splice(display.selectionEnd, 0, p.textContent);
+        display.value = arrText.join('');
+        display.selectionStart = positionCursor;
+        display.selectionEnd = positionCursor;
+      }
+
+      function animationStart() {
+        p.classList.add('animation');
+      }
+
+      if (k.repeat) {
+        k.preventDefault();
+      } else {
+        animationStart();
+      }
+
+      if (k.dataset.key === 'ControlLeft' && k.dataset.key === 'AltLeft') {
+        changelanguageKey();
+      }
+    } else {
+      return;
+    }
+  };
+}

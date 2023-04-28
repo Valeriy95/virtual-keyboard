@@ -40,3 +40,86 @@ function createKey(lang = 'en') {
 }
 
 createKey(localStorage.changelanguage);
+
+document.addEventListener('keydown', (e) => {
+  e.preventDefault();
+  if (keyCodes.includes(e.code) === true) {
+    const display = document.querySelector('.textarea');
+    const p = document.querySelector(`[data-key="${e.code}"]`);
+
+    if (e.code === 'Tab') {
+      const positionCursor = display.selectionEnd + 3;
+      const arrText = display.value.split('');
+      arrText.splice(display.selectionEnd, 0, '   ');
+      display.value = arrText.join('');
+      display.selectionStart = positionCursor;
+      display.selectionEnd = positionCursor;
+    } else if (e.code === 'Enter') {
+      const part1 = display.value.split('').splice(0, display.selectionStart).join('');
+      const part2 = display.value.split('').splice(display.selectionEnd).join('');
+      display.value = `${part1} \n${part2}`;
+      display.selectionStart = part1.length + +2;
+      display.selectionEnd = part1.length + +2;
+    } else if (e.code === 'Delete') {
+      const part1 = display.value.split('').splice(0, display.selectionEnd).join('');
+      const part2 = display.value.split('').splice(display.selectionEnd + 1).join('');
+      display.value = part1 + part2;
+      display.selectionStart = part1.length;
+      display.selectionEnd = part1.length;
+      display.focus();
+    } else if (e.code === 'CapsLock') {
+      lowerUpperCase();
+    } else if (e.code === 'Space') {
+      const positionCursor = display.selectionEnd + 1;
+      const arrText = display.value.split('');
+      arrText.splice(display.selectionEnd, 0, ' ');
+      display.value = arrText.join('');
+      display.selectionStart = positionCursor;
+      display.selectionEnd = positionCursor;
+    } else if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+      if (e.repeat) {
+        e.preventDefault();
+      } else {
+        shiftKeyDown();
+      }
+    } else if (e.code === 'ControlLeft' || e.code === 'ControlRight') {
+      display.value += '';
+    } else if (e.code === 'MetaLeft') {
+      display.value += '';
+    } else if (e.code === 'AltLeft' || e.code === 'AltRight') {
+      display.value += '';
+    } else if (e.code === 'Backspace') {
+      let part1 = display.value.split('').splice(0, display.selectionEnd - 1).join('');
+      if (part1[part1.length - 1] === ' ') {
+        part1 = part1.split('').splice(0, part1.length - 1).join('');
+      }
+      const part2 = display.value.split('').splice(display.selectionEnd).join('');
+      display.value = part1 + part2;
+      display.selectionStart = part1.length;
+      display.selectionEnd = part1.length;
+    } else {
+      const positionCursor = display.selectionEnd + 1;
+      const arrText = display.value.split('');
+      arrText.splice(display.selectionEnd, 0, p.textContent);
+      display.value = arrText.join('');
+      display.selectionStart = positionCursor;
+      display.selectionEnd = positionCursor;
+    }
+
+    function animationStart() {
+      p.classList.add('animation');
+    }
+
+    if (e.repeat) {
+      e.preventDefault();
+    } else {
+      animationStart();
+    }
+
+    if (e.altKey && e.ctrlKey) {
+      changelanguageKey();
+    }
+  } else {
+    return;
+  }
+});

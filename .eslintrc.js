@@ -13,5 +13,7 @@ module.exports = {
   rules: {
     'import/no-cycle': 'off',
     'import/no-mutable-exports': 'off',
+    'no-useless-return': 'off',
+    'no-inner-declarations': 'off',
   },
 };

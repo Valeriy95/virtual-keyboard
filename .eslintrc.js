@@ -11,5 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'import/no-cycle': 'off',
+    'import/no-mutable-exports': 'off',
   },
 };

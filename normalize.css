@@ -94,13 +94,6 @@ html {
    text-transform: none;
  }
  
- button,
- [type="button"],
- [type="reset"],
- [type="submit"] {
-   -webkit-appearance: button;
- }
- 
  button::-moz-focus-inner,
  [type="button"]::-moz-focus-inner,
  [type="reset"]::-moz-focus-inner,
@@ -149,7 +142,7 @@ html {
  }
  
  [type="search"] {
-   -webkit-appearance: textfield; /* 1 */
+   /* -webkit-appearance: textfield; 1 */
    outline-offset: -2px; /* 2 */
  }
  

@@ -15,7 +15,6 @@ function changelanguageKey() {
     languageRu = true;
     if (counter === 1) {
       for (let i = 0; i < alpabetRuLower.length; i += 1) {
-      //   let divKey = document.querySelectorAll('div')[i];
         const divKey = document.querySelectorAll('div')[i];
         divKey.innerHTML = alpabetRuLower[i];
       }

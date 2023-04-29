@@ -24,7 +24,6 @@ body.append(text);
 function createKey(lang = 'en') {
   if (lang === 'en') {
     for (let i = 0; i < alpabetEn.length; i += 1) {
-      // let divKey = document.createElement('div');
       const divKey = document.createElement('div');
       divKey.innerHTML = alpabetEn[i];
       divKey.className = `p${i + 1}`;
@@ -34,7 +33,6 @@ function createKey(lang = 'en') {
   }
   if (lang === 'ru') {
     for (let i = 0; i < alpabetRu.length; i += 1) {
-      // let divKey = document.createElement('div');
       const divKey = document.createElement('div');
       divKey.innerHTML = alpabetRu[i];
       divKey.className = `p${i + 1}`;
@@ -172,7 +170,6 @@ for (const k of key) {
         display.value = part1 + part2;
         display.selectionStart = part1.length;
         display.selectionEnd = part1.length;
-        // display.focus();
       } else if (k.dataset.key === 'CapsLock') {
         lowerUpperCase();
       } else if (k.dataset.key === 'Space') {

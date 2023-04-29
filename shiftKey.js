@@ -45,7 +45,6 @@ function shiftKeyUp() {
 }
 
 function shiftKeyDown() {
-//   const capsLk = document.querySelector('.p30');
   if (localStorage.changelanguage === 'en' || localStorage.changelanguage === undefined) {
     if (counter === 1) {
       for (let i = 0; i < keyCodesForShift.length; i += 1) {

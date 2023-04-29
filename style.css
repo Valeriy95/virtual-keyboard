@@ -4,9 +4,9 @@ body {
 }
 
 .textarea {
-   width: 1036px;
-   height: 300px;
-   font-size: 30px;
+   width: 714px;
+   height: 230px;
+   font-size: 20px;
    font-weight: bold;
    margin-top: 15px;
    margin-left: auto;
@@ -21,10 +21,10 @@ body {
    display: grid;
    font-family: sans-serif;
    border: 3px solid #000000;
-   grid-template-columns: repeat(15, 60px);
-   grid-template-rows: repeat(5, 60px);
-   width: 1040px;
-   height: 350px;
+   grid-template-columns: repeat(15, 40px);
+   grid-template-rows: repeat(5, 40px);
+   width: 720px;
+   height: 250px;
    margin-top: 20px;
    margin-left: auto;
    margin-right: auto;
@@ -107,7 +107,7 @@ body {
    display: flex;
    justify-content: center;
    align-items: center; 
-   font-size: 22px;
+   font-size: 17px;
    margin: 0;
    transition: 0.2s;
 }
@@ -130,7 +130,7 @@ body {
 .p64 {
    font-weight: bold;
    background-color: #2a292a;
-   font-size: 20px;
+   font-size: 15px;
    transition: 0.2s;
 }
 
@@ -266,11 +266,9 @@ body {
 }
 
 .text {
-   width: 1040px;
-   height: 300px;
    text-align: center;
-   font-size: 30px;
-   margin-top: 40px;
+   font-size: 16px;
+   margin-top: 20px;
    margin-left: auto;
    margin-right: auto;
 }

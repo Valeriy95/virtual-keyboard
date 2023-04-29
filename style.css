@@ -95,16 +95,17 @@ body {
 .p62,
 .p63,
 .p64 {
-background-color: #605f60;
-color: #ffffff;
-border-radius: 5px;
-height: 100%;
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center; 
-font-size: 18px;
-margin: 0;
+   background-color: #605f60;
+   color: #ffffff;
+   border-radius: 5px;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+   font-size: 22px;
+   margin: 0;
+   transition: 0.2s;
 }
 
 .p14,
@@ -125,7 +126,8 @@ margin: 0;
 .p64 {
    font-weight: bold;
    background-color: #2a292a;
-   font-size: 17px;
+   font-size: 20px;
+   transition: 0.2s;
 }
 
 .p1 {
@@ -204,28 +206,35 @@ margin: 0;
    grid-area: 5 / 4 / 6 / 11;
 }
 
-.p44:active {
-   background-color: #dd11dd;
-}
-
 .animation {
-   animation: anim 0.3s forwards;
+   animation: anim 0.1s forwards;
 }
 
 .animCapsLkOn {
-   animation: animCapsLkStart 0.3s forwards;
+   animation: animCapsLkStart 0.1s forwards;
 }
 
 .animCapsLkOff {
-   animation: animCapsLkEnd 0.3s forwards;
+   animation: animCapsLkEnd 0.1s;
 }
 
 @keyframes anim {
    0% {
       background-color: #605f60;
+      border-radius: 5px;
+   }
+   25% {
+      border-radius: 7px;
+   }
+   50% {
+      background-color: #52a95f;
+      border-radius: 15px;
+   }
+   75% {
+      border-radius: 22px;
    }
    100% {
-      background-color: #313131;
+      background-color: #47da5d;
       border-radius: 30px;
    }
 }
@@ -236,15 +245,15 @@ margin: 0;
       border-radius: 0px;
    }
    100% {
-      background-color: #50cd63;
-      border-radius: 20px;
+      background-color: #47da5d;
+      border-radius: 30px;
    }
 }
 
 @keyframes animCapsLkEnd {
    0% {
-      background-color: #50cd63;
-      border-radius: 20px;
+      background-color: #47da5d;
+      border-radius: 30px;
    }
    100% {
       background-color: #2a292a;
@@ -260,4 +269,75 @@ margin: 0;
    margin-top: 40px;
    margin-left: auto;
    margin-right: auto;
+}
+
+.p1:hover,
+.p2:hover,
+.p3:hover,
+.p4:hover,
+.p5:hover,
+.p6:hover,
+.p7:hover,
+.p8:hover,
+.p9:hover,
+.p10:hover,
+.p11:hover,
+.p12:hover,
+.p13:hover,
+.p14:hover,
+.p15:hover,
+.p16:hover,
+.p17:hover,
+.p18:hover,
+.p19:hover,
+.p20:hover,
+.p21:hover,
+.p22:hover,
+.p23:hover,
+.p24:hover,
+.p25:hover,
+.p26:hover,
+.p27:hover,
+.p28:hover,
+.p29:hover,
+.p30:hover,
+.animCapsLkOff:hover,
+.p31:hover,
+.p32:hover,
+.p33:hover,
+.p34:hover,
+.p35:hover,
+.p36:hover,
+.p37:hover,
+.p38:hover,
+.p39:hover,
+.p40:hover,
+.p41:hover,
+.p42:hover,
+.p43:hover,
+.p44:hover,
+.p45:hover,
+.p46:hover,
+.p47:hover,
+.p48:hover,
+.p49:hover,
+.p50:hover,
+.p51:hover,
+.p52:hover,
+.p53:hover,
+.p54:hover,
+.p55:hover,
+.p56:hover,
+.p57:hover,
+.p58:hover,
+.p59:hover,
+.p60:hover,
+.p61:hover,
+.p62:hover,
+.p63:hover,
+.p64:hover {
+   background-color: #52a95f;
+   cursor: pointer;
+   transition: 0.2s;
+   border-radius: 5px;
 }

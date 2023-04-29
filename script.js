@@ -139,9 +139,7 @@ document.addEventListener('keyup', (e) => {
       animationEnd();
       shiftKeyUp();
     } else {
-      setTimeout(() => {
-        animationEnd();
-      }, 300);
+      animationEnd();
     }
   } else {
     return;
@@ -244,9 +242,7 @@ for (const k of key) {
         animationEnd();
         shiftKeyUp();
       } else {
-        setTimeout(() => {
-          animationEnd();
-        }, 300);
+        animationEnd();
       }
     } else {
       return;

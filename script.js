@@ -25,7 +25,7 @@ body.append(section);
 
 const text = document.createElement('p');
 text.className = 'text';
-text.innerHTML = 'Клавиатура создана в операционной системе Windows <br> Для переключения языка комбинация: левыe ctrl + alt';
+text.innerHTML = 'To switch the language combination: left ctrl + alt';
 body.append(text);
 
 function createKey(lang = 'en') {
